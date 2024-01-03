@@ -1,0 +1,124 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+#gameName{
+    font-size: 3em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin: 30px 0px;
+}
+
+p{
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 3px;
+}
+
+.game-button{
+    margin: 1vw;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+
+.reset-button{
+    display: grid;
+    margin: auto;
+    padding: 5px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border-radius:5px;
+
+}
+
+.moveIcon{
+    height: 10em;
+}
+
+.resultMoves img{
+    height: 8em;
+}
+
+.resultMoves{
+    margin-left: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.resultText{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.themeButton{
+    
+    background-color: black;
+    color:white;
+    border-radius: 5px;
+    padding: 6px;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    cursor: pointer;
+}
+
+.darkTheme {
+    background-color: black;
+    color: white;
+}
+
+.darkTheme .game-button{
+    border-color: white;
+}
+
+.darkTheme .reset-button{
+    background-color: white;
+    color: black;
+}
+
+.darkTheme .themeButton{
+    background-color: white;
+    color: black;
+}
+
+.lightTheme{
+    background-color: white;
+    color: black;
+}
+
+.lightTheme .themeButton{
+    background-color: black;
+    color: white;
+}
+
+.buttons :hover{
+    border-color: blue;
+    transition: 1s;
+}
+
+@media only screen and (max-width: 800px) {
+
+    #gameName{
+        font-size: 6vw;
+    }
+
+    .moveIcon{
+        height: 16vw;
+    }
+
+    .resultMoves img{
+        height: 16vw;
+    }
+
+}
+
+
