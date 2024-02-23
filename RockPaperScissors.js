@@ -7,6 +7,37 @@ let result = '';
 
 updateScoreElement();
 
+document.querySelector('.js-rock-button')
+    .addEventListener('click', () => {
+        playGame('rock');
+    });
+
+document.querySelector('.js-paper-button')
+    .addEventListener('click', () =>{
+        playGame('paper');
+    });
+
+document.querySelector('.js-scissors-button')
+    .addEventListener('click', () => {
+        playGame('scissors');
+    });
+
+document.body.addEventListener('keydown', (event) =>{
+    if(event.key === "r"){
+        playGame('rock');
+    }else if(event.key === "p"){
+        playGame('paper');
+    }else if(event.key === "s"){
+        playGame('scissors');
+    }else if(event.key === "Backspace"){
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+    }
+});
+
 function playGame(playerMove) {
     const computerMove = pickComputerMove();
     if (playerMove === 'scissors') {
@@ -56,6 +87,15 @@ function playGame(playerMove) {
 
 }
 
+document.querySelector('.js-reset-button')
+    .addEventListener('click', () =>{
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+    });
+
 function updateScoreElement()
 {
     document.querySelector('.js-score')
@@ -80,9 +120,28 @@ function pickComputerMove() {
     return computerMove;
 }
 
+const buttonEl = document.querySelector('.js-theme');
+let element = document.body;
+
+buttonEl.addEventListener('click', () =>{
+    thm();
+});
+
+document.body.addEventListener('keydown', (event) =>{
+    if(event.key === "d"){
+        buttonEl.innerHTML = 'Light Theme';
+        element.classList.add('darkTheme');
+        element.classList.remove('lightTheme');
+
+    }else if(event.key === "l"){
+        buttonEl.innerHTML = 'Dark Theme';
+        element.classList.add('lightTheme');
+        element.classList.remove('darkTheme');
+
+    }
+});
+
 function thm(){
-    const buttonEl = document.querySelector('.js-theme');
-    let element = document.body;
         if(buttonEl.innerText === 'Dark Theme')
         {
             buttonEl.innerHTML = 'Light Theme';
